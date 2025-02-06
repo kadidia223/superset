@@ -37,6 +37,7 @@ const TitleArea = styled.div`
       font-size: ${theme.typography.sizes.l}px;
       flex-grow: 1;
       font-weight: ${theme.typography.weights.bold};
+      order: -1;
     }
 
     & > div:first-of-type {
@@ -58,9 +59,6 @@ const Wrapper = styled.div`
     padding: ${theme.gridUnit * 3}px ${theme.gridUnit * 2}px ${
       theme.gridUnit
     }px;
-    .ant-dropdown-trigger span {
-      padding-right: ${theme.gridUnit * 2}px;
-    }
   `}
 `;
 
@@ -75,15 +73,17 @@ const Header: FC<HeaderProps> = ({ toggleFiltersBar }) => {
     <Wrapper>
       <TitleArea>
         <span>{t('Filters')}</span>
-        <FilterBarSettings />
-        <HeaderButton
-          {...getFilterBarTestId('collapse-button')}
-          buttonStyle="link"
-          buttonSize="xsmall"
-          onClick={() => toggleFiltersBar(false)}
-        >
-          <Icons.Expand iconColor={theme.colors.grayscale.base} />
-        </HeaderButton>
+        <>
+          <FilterBarSettings />
+          <HeaderButton
+            {...getFilterBarTestId('collapse-button')}
+            buttonStyle="link"
+            buttonSize="xsmall"
+            onClick={() => toggleFiltersBar(false)}
+          >
+            <Icons.Expand iconColor={theme.colors.grayscale.base} />
+          </HeaderButton>
+        </>
       </TitleArea>
     </Wrapper>
   );
