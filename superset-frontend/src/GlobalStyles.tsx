@@ -39,10 +39,11 @@ export const GlobalStyles = () => (
       .echarts-tooltip[style*='visibility: hidden'] {
         display: none !important;
       }
+
       // Ant Design is applying inline z-index styles causing troubles
       // TODO: Remove z-indexes when Ant Design is fully upgraded to v5
       // Prefer vanilla Ant Design z-indexes that should work out of the box
-      .ant-popover,
+
       .antd5-dropdown,
       .ant-dropdown,
       .ant-select-dropdown,
